@@ -177,7 +177,14 @@
       background: var(--site-bg);
       color: var(--site-muted);
       font-size: 14px;
+      overflow: hidden;
     }
+
+    .image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
     .floating-card {
       position: absolute;
@@ -430,7 +437,7 @@
       <div class="hero-image">
         <div class="image-card">
           <div class="image-placeholder">
-             <img src="desemprego-estrutural.jpg">
+             <img src="quadro.jpeg">
           </div>
         </div>
         <div class="floating-card">
