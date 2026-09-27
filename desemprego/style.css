@@ -1,0 +1,875 @@
+/* =================================
+   CONFIGURAÇÕES GERAIS
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #f7f3e9;
+    color: #25201d;
+    line-height: 1.6;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =================================
+   BARRA SUPERIOR
+================================= */
+
+.top-bar {
+    background: #3d3b91;
+    color: white;
+    text-align: center;
+    padding: 9px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+
+/* =================================
+   HEADER
+================================= */
+
+.header {
+    width: 90%;
+    max-width: 1250px;
+    margin: auto;
+
+    min-height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #302b28;
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.logo span,
+.footer-logo span {
+    color: #655eea;
+}
+
+.menu {
+    display: flex;
+    gap: 35px;
+}
+
+.menu a {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #655eea;
+}
+
+.menu-mobile {
+    display: none;
+    border: none;
+    background: transparent;
+    font-size: 25px;
+}
+
+
+/* =================================
+   HERO
+================================= */
+
+.hero {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 70px auto 100px;
+
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 70px;
+
+    align-items: center;
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.tag {
+    display: inline-block;
+
+    background: #d8ed7b;
+
+    padding: 7px 13px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(50px, 6vw, 82px);
+
+    line-height: 0.98;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 em {
+    color: #655eea;
+    font-weight: 500;
+}
+
+.hero p {
+    max-width: 570px;
+    font-size: 17px;
+    color: #625d58;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-block;
+
+    padding: 14px 24px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    border: 1px solid #25201d;
+
+    transition: 0.3s;
+}
+
+.primary {
+    background: #655eea;
+    color: white;
+    border-color: #655eea;
+}
+
+.primary:hover {
+    transform: translateY(-3px);
+}
+
+.secondary:hover {
+    background: #25201d;
+    color: white;
+}
+
+
+/* =================================
+   HERO IMAGE
+================================= */
+
+.hero-image {
+    position: relative;
+}
+
+.image-card {
+    border: 2px solid #25201d;
+    padding: 12px;
+
+    transform: rotate(2deg);
+
+    background: white;
+}
+
+.image-card img {
+    height: 500px;
+    object-fit: cover;
+}
+
+.floating-card {
+    position: absolute;
+
+    bottom: -25px;
+    left: -35px;
+
+    background: #d8ed7b;
+
+    padding: 20px;
+
+    border: 2px solid #25201d;
+
+    display: flex;
+    flex-direction: column;
+
+    font-size: 12px;
+}
+
+.floating-card span {
+    color: #655eea;
+}
+
+
+/* =================================
+   FRASE
+================================= */
+
+.quote-section {
+    background: #27235e;
+    color: white;
+
+    padding: 100px 10%;
+
+    text-align: center;
+}
+
+.small-title {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.quote-section h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(35px, 5vw, 65px);
+
+    line-height: 1.1;
+
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+.quote-section h2 span {
+    color: #d8ed7b;
+}
+
+
+/* =================================
+   SEÇÕES
+================================= */
+
+.section {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 120px 0;
+}
+
+.section-title span {
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #655eea;
+}
+
+.section-title h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(40px, 5vw, 65px);
+
+    line-height: 1.05;
+
+    margin-top: 15px;
+}
+
+.section-title h2 em {
+    color: #655eea;
+}
+
+
+/* =================================
+   DUAS COLUNAS
+================================= */
+
+.two-columns {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    margin-top: 70px;
+}
+
+.big-text {
+    font-family: "Playfair Display", serif;
+
+    font-size: 30px;
+
+    line-height: 1.3;
+}
+
+.two-columns p:not(.big-text) {
+    margin-bottom: 20px;
+
+    color: #625d58;
+}
+
+
+/* =================================
+   CARDS
+================================= */
+
+.cards-section {
+    background: white;
+
+    padding: 110px 5%;
+}
+
+.center {
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.cards {
+    max-width: 1200px;
+
+    margin: 70px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.info-card {
+    min-height: 380px;
+
+    padding: 35px;
+
+    border: 2px solid #25201d;
+
+    position: relative;
+
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-purple {
+    background: #dfd1ff;
+}
+
+.card-green {
+    background: #d8ed7b;
+}
+
+.card-orange {
+    background: #ff9b76;
+}
+
+.card-number {
+    position: absolute;
+
+    top: 20px;
+    right: 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-top: 60px;
+    margin-bottom: 25px;
+}
+
+.info-card h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 32px;
+
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    color: #443e3a;
+}
+
+
+/* =================================
+   SEÇÃO VISUAL
+================================= */
+
+.visual-section {
+    max-width: 1250px;
+
+    margin: 120px auto;
+
+    padding: 0 5%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.visual-image {
+    border: 2px solid #25201d;
+
+    padding: 10px;
+
+    transform: rotate(-2deg);
+}
+
+.visual-image img {
+    height: 550px;
+    object-fit: cover;
+}
+
+.visual-text span {
+    color: #655eea;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.visual-text h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(40px, 5vw, 65px);
+
+    line-height: 1.05;
+
+    margin: 20px 0 25px;
+}
+
+.visual-text h2 em {
+    color: #655eea;
+}
+
+.visual-text p {
+    color: #625d58;
+
+    max-width: 500px;
+
+    margin-bottom: 30px;
+}
+
+.text-link {
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: #655eea;
+}
+
+
+/* =================================
+   IMPACTOS
+================================= */
+
+.impacts {
+    padding-top: 80px;
+}
+
+.impact-grid {
+    margin-top: 70px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    border-top: 1px solid #25201d;
+}
+
+.impact-item {
+    padding: 40px;
+
+    border-bottom: 1px solid #25201d;
+}
+
+.impact-item:nth-child(odd) {
+    border-right: 1px solid #25201d;
+}
+
+.impact-item strong {
+    color: #655eea;
+
+    font-size: 14px;
+}
+
+.impact-item h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 30px;
+
+    margin: 15px 0;
+}
+
+.impact-item p {
+    color: #625d58;
+}
+
+
+/* =================================
+   NÚMEROS
+================================= */
+
+.numbers {
+    background: #d8ed7b;
+
+    padding: 80px 10%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.number-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.number {
+    font-family: "Playfair Display", serif;
+
+    font-size: 60px;
+
+    color: #27235e;
+}
+
+.number-item p {
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* =================================
+   SOLUÇÕES
+================================= */
+
+.solutions {
+    background: #27235e;
+
+    color: white;
+
+    padding: 120px 10%;
+}
+
+.solutions-header {
+    max-width: 900px;
+
+    margin-bottom: 70px;
+}
+
+.solutions-header span {
+    color: #d8ed7b;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+}
+
+.solutions-header h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: 1;
+
+    margin-top: 20px;
+}
+
+.solutions-header em {
+    color: #d8ed7b;
+}
+
+.solution-list {
+    max-width: 1100px;
+}
+
+.solution {
+    display: grid;
+
+    grid-template-columns: 100px 1fr;
+
+    gap: 30px;
+
+    padding: 35px 0;
+
+    border-top: 1px solid rgba(255,255,255,0.3);
+}
+
+.solution-number {
+    color: #d8ed7b;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+}
+
+.solution h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+.solution p {
+    color: #d4d0d0;
+
+    max-width: 700px;
+}
+
+
+/* =================================
+   CONCLUSÃO
+================================= */
+
+.conclusion {
+    padding: 140px 10%;
+
+    background: #ff9b76;
+}
+
+.conclusion-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.conclusion-content span {
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+}
+
+.conclusion h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: 1;
+
+    margin: 25px 0;
+}
+
+.conclusion p {
+    max-width: 700px;
+
+    font-size: 17px;
+
+    color: #4f3c35;
+
+    margin-bottom: 35px;
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+.footer {
+    background: #25201d;
+
+    color: white;
+
+    padding: 50px 10%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.footer-logo {
+    font-family: "Playfair Display", serif;
+
+    font-size: 28px;
+}
+
+.footer p {
+    font-size: 12px;
+
+    color: #aaa;
+}
+
+
+/* =================================
+   RESPONSIVIDADE
+================================= */
+
+@media (max-width: 900px) {
+
+    .menu {
+        display: none;
+    }
+
+    .menu-mobile {
+        display: block;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        margin-top: 50px;
+    }
+
+    .hero-image {
+        max-width: 600px;
+    }
+
+    .two-columns {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .visual-section {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .impact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .impact-item:nth-child(odd) {
+        border-right: none;
+    }
+
+    .numbers {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero {
+        width: 88%;
+    }
+
+    .image-card img {
+        height: 380px;
+    }
+
+    .floating-card {
+        left: -10px;
+    }
+
+    .section {
+        padding: 80px 0;
+    }
+
+    .cards-section {
+        padding: 80px 6%;
+    }
+
+    .visual-image img {
+        height: 400px;
+    }
+
+    .solution {
+        grid-template-columns: 50px 1fr;
+
+        gap: 15px;
+    }
+
+    .solution h3 {
+        font-size: 24px;
+    }
+
+    .footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+/* =================================
+   ANIMAÇÃO
+================================= */
+
+.info-card,
+.impact-item,
+.solution,
+.visual-section {
+    opacity: 0;
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.info-card.show,
+.impact-item.show,
+.solution.show,
+.visual-section.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
