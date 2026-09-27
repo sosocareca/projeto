@@ -177,7 +177,14 @@
       background: var(--site-bg);
       color: var(--site-muted);
       font-size: 14px;
+      overflow: hidden;
     }
+
+    .image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
     .floating-card {
       position: absolute;
@@ -280,7 +287,7 @@
     .card-purple { background: #C4FAF8; }
     .card-green { background: #85E3FF; }
     .card-orange { background: #ACE7FF; }
-    .card-purple { background: #6EB5FF; }
+    .card-blue { background: #6EB5FF; }
 
     .card-number {
       position: absolute;
@@ -501,12 +508,11 @@
           </p>
         </article>
 
-          <article class="info-card card-green">
+          <article class="info-card card-blue">
           <div class="card-number">04</div>
           <h3>Desemprego Friccional</h3>
           <p>
-            Ocorre quando há uma mudança estrutural na sociedade. Os trabalhadores atingidos por esse tipo de desemprego não conseguem adequar-se à nova realidade do mercado de trabalho ou às novas demandas trabalhistas.
-          </p>
+         </p>
         </article>
 
       </div>
