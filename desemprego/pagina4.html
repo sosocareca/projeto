@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Física — O Futuro do Trabalho</title>
+  <meta name="description" content="Página de pesquisa de Física do projeto O Futuro do Trabalho: introdução, principais pesquisas e conclusão.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap">
+  <style>
+    :root {
+      --site-bg: #f7f3e9;
+      --site-ink: #25201d;
+      --site-purple: #655eea;
+      --site-deep: #27235e;
+      --site-navy: #3d3b91;
+      --site-lime: #d8ed7b;
+      --site-orange: #ff9b76;
+      --site-muted: #625d58;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--site-bg);
+      color: var(--site-ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* Barra superior */
+
+    .top-bar {
+      background: var(--site-navy);
+      color: white;
+      text-align: center;
+      padding: 9px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    /* Cabecalho */
+
+    .header {
+      width: 90%;
+      max-width: 1250px;
+      margin: auto;
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--site-ink);
+      position: relative;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+      font-weight: 700;
+    }
+
+    .logo span { color: var(--site-purple); }
+
+    .menu { display: flex; gap: 35px; }
+
+    .menu a {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      transition: 0.3s;
+    }
+
+    .menu a:hover,
+    .menu a.active { color: var(--site-purple); }
+
+    .menu-mobile {
+      display: none;
+      border: none;
+      background: transparent;
+      font-size: 25px;
+      cursor: pointer;
+      color: var(--site-ink);
+    }
+
+    /* Hero */
+
+    .hero {
+      width: 90%;
+      max-width: 1250px;
+      margin: 70px auto 100px;
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .hero-text { max-width: 650px; }
+
+    .tag {
+      display: inline-block;
+      background: var(--site-lime);
+      padding: 7px 13px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(50px, 6vw, 82px);
+      line-height: 0.98;
+      margin-bottom: 30px;
+    }
+
+    .hero h1 em {
+      color: var(--site-purple);
+      font-weight: 500;
+    }
+
+    .hero p {
+      max-width: 570px;
+      font-size: 17px;
+      color: var(--site-muted);
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 24px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      border: 1px solid var(--site-ink);
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .button.primary {
+      background: var(--site-purple);
+      color: white;
+      border-color: var(--site-purple);
+    }
+
+    .button.primary:hover { transform: translateY(-3px); }
+
+    /* Hero imagem */
+
+    .hero-image { position: relative; }
+
+    .image-card {
+      border: 2px solid var(--site-ink);
+      padding: 12px;
+      transform: rotate(2deg);
+      background: white;
+    }
+
+    .image-placeholder {
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+      border: 2px dashed var(--site-purple);
+      background: var(--site-bg);
+      color: var(--site-muted);
+      font-size: 14px;
+    }
+
+    .floating-card {
+      position: absolute;
+      bottom: -25px;
+      left: -35px;
+      background: var(--site-lime);
+      padding: 20px;
+      border: 2px solid var(--site-ink);
+      display: flex;
+      flex-direction: column;
+      font-size: 12px;
+    }
+
+    .floating-card span { color: var(--site-purple); }
+
+    /* Secoes */
+
+    .section {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 120px 0;
+    }
+
+    .section-title span {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--site-purple);
+    }
+
+    .section-title h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(40px, 5vw, 65px);
+      line-height: 1.05;
+      margin-top: 15px;
+    }
+
+    .section-title h2 em { color: var(--site-purple); }
+
+    /* Duas colunas */
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-top: 70px;
+    }
+
+    /* Espaco reservado para texto */
+
+    .placeholder-box {
+      border: 2px dashed var(--site-purple);
+      padding: 25px;
+      margin-bottom: 20px;
+      color: var(--site-muted);
+      font-size: 15px;
+    }
+
+    .placeholder-box strong {
+      display: block;
+      color: var(--site-purple);
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    /* Cards */
+
+    .cards-section {
+      background: white;
+      padding: 110px 5%;
+    }
+
+    .center {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .cards {
+      max-width: 1200px;
+      margin: 70px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .info-card {
+      min-height: 380px;
+      padding: 35px;
+      border: 2px solid var(--site-ink);
+      position: relative;
+      transition: 0.3s;
+    }
+
+    .info-card:hover { transform: translateY(-10px); }
+
+    .card-purple { background: #dfd1ff; }
+    .card-green { background: var(--site-lime); }
+    .card-orange { background: var(--site-orange); }
+
+    .card-number {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .info-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .info-card p { color: #443e3a; }
+
+    /* Conclusao */
+
+    .conclusion {
+      padding: 140px 10%;
+      background: var(--site-orange);
+    }
+
+    .conclusion-content {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .conclusion-content span {
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    .conclusion h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(45px, 6vw, 75px);
+      line-height: 1;
+      margin: 25px 0;
+    }
+
+    /* Rodape */
+
+    .footer {
+      background: var(--site-ink);
+      color: white;
+      padding: 50px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+    }
+
+    .footer-logo span { color: #9a8fff; }
+
+    .footer p {
+      font-size: 12px;
+      color: #aaa;
+    }
+
+    /* Responsividade */
+
+    @media (max-width: 900px) {
+      .menu { display: none; }
+
+      .menu-mobile { display: block; }
+
+      .menu.open {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        position: absolute;
+        top: 110px;
+        left: 5%;
+        right: 5%;
+        background: white;
+        border: 2px solid var(--site-ink);
+        padding: 25px;
+        z-index: 10;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        margin: 50px auto 80px;
+      }
+
+      .two-columns {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .cards { grid-template-columns: 1fr; }
+
+      .image-placeholder { height: 380px; }
+
+      .floating-card { left: -10px; }
+
+      .section { padding: 80px 0; }
+
+      .cards-section { padding: 80px 6%; }
+
+      .footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">PROJETO DE PROGRAMAÇÃO WEB • 2026</div>
+  <header class="header">
+    <a href="index.html" class="logo">FUTURO<span>+</span></a>
+    <nav class="menu" id="menu">
+      <a href="index.html">Início</a>
+      <a href="fisica.html" class="active">Física</a>
+      <a href="geografia.html">Geografia</a>
+    </nav>
+    <button type="button" class="menu-mobile" aria-label="Abrir menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <span class="tag">PROJETO DE FÍSICA • 2026</span>
+        <h1>Física <em>e o futuro do trabalho.</em></h1>
+        <p>
+          Nesta página ficam as pesquisas de Física ligadas ao tema do
+          projeto: como a tecnologia e as máquinas transformam o trabalho
+          das pessoas.
+        </p>
+        <div class="hero-buttons">
+          <a href="#pesquisas" class="button primary">VER PESQUISAS ↓</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="image-card">
+          <div class="image-placeholder">
+            Espaço reservado para a imagem da página de Física
+          </div>
+        </div>
+        <div class="floating-card">
+          <strong>FÍSICA</strong>
+          <span>ESPAÇO DE PESQUISA</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="introducao">
+      <div class="section-title">
+        <span>01 — INTRODUÇÃO</span>
+        <h2>Sobre a <em>pesquisa de Física.</em></h2>
+      </div>
+      <div class="two-columns">
+        <div>
+          <div class="placeholder-box">
+            <strong>Espaço para o texto de introdução</strong>
+            Escreva aqui a introdução da pesquisa de Física: o que será
+            estudado e por que esse tema foi escolhido.
+          </div>
+        </div>
+        <div>
+          <div class="placeholder-box">
+            <strong>Espaço para o contexto</strong>
+            Escreva aqui o contexto da pesquisa: conceitos de Física
+            envolvidos, exemplos e dados que você encontrar.
+          </div>
+          <div class="placeholder-box">
+            <strong>Espaço para as fontes</strong>
+            Liste aqui os sites, livros e materiais usados na pesquisa.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards-section" id="pesquisas">
+      <div class="section-title center">
+        <span>02 — PESQUISAS</span>
+        <h2>Principais <em>temas estudados.</em></h2>
+      </div>
+      <div class="cards">
+        <article class="info-card card-purple">
+          <div class="card-number">01</div>
+          <h3>Pesquisa 01</h3>
+          <p>
+            Espaço reservado para o texto da primeira pesquisa de Física.
+            Substitua este texto pelo resumo do tema estudado.
+          </p>
+        </article>
+        <article class="info-card card-green">
+          <div class="card-number">02</div>
+          <h3>Pesquisa 02</h3>
+          <p>
+            Espaço reservado para o texto da segunda pesquisa de Física.
+            Substitua este texto pelo resumo do tema estudado.
+          </p>
+        </article>
+        <article class="info-card card-orange">
+          <div class="card-number">03</div>
+          <h3>Pesquisa 03</h3>
+          <p>
+            Espaço reservado para o texto da terceira pesquisa de Física.
+            Substitua este texto pelo resumo do tema estudado.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="conclusion">
+      <div class="conclusion-content">
+        <span>03 — CONCLUSÃO</span>
+        <h2>Conclusão da pesquisa.</h2>
+        <div class="placeholder-box">
+          <strong>Espaço para a conclusão</strong>
+          Escreva aqui a conclusão da pesquisa de Física: o que você
+          aprendeu e como isso se conecta com o futuro do trabalho.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <p class="footer-logo">FUTURO<span>+</span></p>
+      <p>O futuro do trabalho</p>
+    </div>
+    <p>Projeto de programação web • 2026</p>
+  </footer>
+</body>
+</html>
